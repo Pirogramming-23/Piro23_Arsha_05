@@ -1,4 +1,4 @@
-/* 전체 섹션 정렬 */
+/* service!!!!!!!!!! */
 
 #services-section {
     background-color: #f5f6f8;
@@ -11,7 +11,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #37517e;
     font-family: "Jost", sans-serif;
 }
-/* 타이틀 영역 */
 .services-title {
     text-align: center;
     position: relative;
@@ -65,10 +64,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 50px 30px;
     position: relative;
     cursor: pointer;
-  /* 왼쪽 정렬 */
     text-align: left;
 
-  /* 애니메이션을 위한 초기값 */
     transform: translateY(0);
     transition: all ease-in-out 0.4s;
     transition-behavior: normal;
@@ -98,23 +95,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card:hover h4 {
-  color: #47b2e4; /* 원하는 색상으로 변경 */
-  transform: translateY(-5px); /* 살짝만 위로 이동 */
+    color: #47b2e4; 
+    transform: translateY(-5px); 
 }
 .service-card p {
     font-size: 14px;
     color: #444;
 }
 
-/* hover 효과 */
-
-
 .service-card:hover {
     top: -5px;
     color: #3b5998;
 }
-
-
 
 .services-container {
     display: grid;
@@ -122,7 +114,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 106px;
 }
 
-/* 태블릿 이상: 2열 */
 @media (min-width: 600px) {
     .services-container {
         grid-template-columns: repeat(2, 1fr);
@@ -130,9 +121,62 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* 데스크탑 이상: 4열 */
 @media (min-width: 1200px) {
     .services-container {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+
+/* work!!!!!!!!!!! */
+#work_process {
+    color: #444444;
+    background-color: #ffffff;
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+@media (max-width: 1199px) {
+    #work_process {
+        scroll-margin-top: 66px;
+    }
+}
+
+.work_process-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    color: #37517e;
+}
+
+.work_process-title h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; 
+    height: 3px;
+    background: #47b2e4;
+    text-align: center;
+}
+.work_process-title h2::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 1px;
+    background: #444444;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.work_process-title p {
+    margin-bottom: 0;
+    text-align: center;
 }
