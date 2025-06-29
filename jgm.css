@@ -1,5 +1,7 @@
 /* service!!!!!!!!!! */
-
+*, ::after, ::before {
+    box-sizing: border-box;
+}
 #services-section {
     background-color: #f5f6f8;
     padding: 60px 0px;
@@ -129,17 +131,39 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* work!!!!!!!!!!! */
+:root {
+    --background-color: #ffffff;
+    --default-color: #444444;
+    --heading-color: #37517e;
+    --accent-color: #47b2e4;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
 #work_process {
     color: #444444;
     background-color: #ffffff;
     padding: 60px 0;
     scroll-margin-top: 88px;
     overflow: clip;
+    font-family: 'Segoe UI', sans-serif;
 }
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
     #work_process {
         scroll-margin-top: 66px;
     }
+    .work-process .steps-content {
+        padding: 30px 20px 20px;
+    }
+}
+
+.work_process-title{
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .work_process-title h2 {
@@ -179,4 +203,142 @@ h1, h2, h3, h4, h5, h6 {
 .work_process-title p {
     margin-bottom: 0;
     text-align: center;
+}
+
+
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.work-item {
+    background: #ffffff;
+    border-radius: 20px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px color-mix(in srgb, #444444, transparent 92%);
+    overflow: hidden;
+    
+}
+
+.work-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.work-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+    transition: transform 0.6s ease;
+}
+.work-item:hover .work-image img {
+    transform: scale(1.1);
+}
+
+.work-content {
+    position: relative;
+    padding: 40px 30px 30px;
+    transition: transform 0.3s ease;
+}
+
+.work-number {
+    position: absolute;
+    left: 30px;
+    top: -30px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 50%;
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.work-item:hover .work-number:hover {
+    background: var(--default-color);
+    color: var(--contrast-color);
+}
+.work-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #37527e;
+}
+
+.work-content p {
+    font-size: 15px;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-bottom: 25px;
+}
+.feature-item {
+    display: flex;
+    align-items: center;
+    color: var(--default-color);
+    flex-direction: row; /* 세로 → 가로 정렬 */
+    gap: 10px; /* 아이콘과 텍스트 사이 여백 */
+    margin-bottom: 7px;
+}
+
+.work-feature .feature-item i {
+    color: #4db7fe;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.work-feature .feature-item span {
+    font-size: 14px;
+    color : color-mix(in srgb, var(--default-color), transparent 15%);
+}
+.feature-item svg {
+    color: #47b2e4;
+    width: 1.4rem;
+    height: 2rem;
+    transition: 0.3s;
+}
+
+@media (max-width: 991px) {
+    .work-image {
+        height: 220px;
+    }
+
+    .work-content {
+        padding: 30px 20px 20px;
+    }
+
+    .work-number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        left: 25px;
+        top: -25px;
+    }
+
+    .work-content h3 {
+        font-size: 20px;
+    }
+
+    .work-content p {
+        font-size: 14px;
+    }
+    
+}
+@media (max-width: 991px) {
+    .work-process .work-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
 }
