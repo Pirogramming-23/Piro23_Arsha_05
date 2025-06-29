@@ -1,0 +1,82 @@
+#services {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+
+}
+.section-title h2:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: 
+    color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+.service-card {
+    background-color: #fff; /* → 배경: 흰색 */
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05); /* → 그림자 */
+    padding: 40px 25px; /* → 너가 원하는 여백으로 수정 가능 */
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    height: 100%;
+}
+
+/* 아이콘 영역 */
+.service-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #0d6efd; /* → 강조 색상 */
+    transition: color 0.3s ease;
+}
+
+/* 제목 스타일 */
+.service-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.service-card h4 a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* 설명 */
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Hover 효과 */
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card:hover .icon {
+    color: #0a58ca; /* 아이콘 색상 진하게 */
+}
+
+.service-card:hover h4 a {
+    color: #0d6efd; /* 제목도 강조색으로 */
+}
+.stretched-link::before, .stretched-link::after{
+    box-sizing: border-box;
+}
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
