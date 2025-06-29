@@ -33,7 +33,7 @@
 .icon_header{
     fill: #879EB6;
 }
-#header_icons a:hover > .icon_hov{
+.icon_hov:hover{
     animation: header_hovering 0.3s ease forwards;
 }
 @keyframes header_hovering{
@@ -57,6 +57,9 @@
     text-decoration: none;
     position: relative;
     top: -2px;
+}
+#top_header_title:hover{
+    cursor: pointer;
 }
 #top_header_center{
     display: flex;
@@ -94,4 +97,15 @@
 #top_header_link{
     position: relative;
     top: 2px;
+}
+#top_header_download:hover{
+    animation: download_hovering 0.3s ease forwards;
+}
+@keyframes download_hovering{
+    form{
+        background-color: var(--color_skyblue);
+    }
+    to{
+        background-color: #00b4ff;
+    }
 }
