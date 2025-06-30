@@ -408,6 +408,7 @@
 }
 #footer_follow >p{
     margin-top: 0;
+    margin-bottom: 16px;
 }
 #footer_follow > h4{
     padding-bottom: 12px;
@@ -491,114 +492,116 @@
     overflow: clip;
 }
 
-#port_title_container{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+.port_tabs {
+  max-width: 1320px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin: 0 auto;
+  position: relative; /* 추가 */
 }
-
-#port_title_container h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #37517e;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    font-family: "Jost", sans-serif;
-    position: relative;
+.port_tabs input {
+  display: none;
 }
-#port_title_container h2::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: #47b2e4;
-}
-
-#port_title_container h2::before {
-    content: "";
-    position: absolute;
-    width: 160px;
-    height: 1px;
-    background: color-mix(in srgb, #444444, transparent 60%);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#port_title_container p {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-}
-
-#port_content_container{
-    max-width: 1320px;
-    padding: 0 12px;
-}
-
-.labels label{
-    cursor: pointer;
-    display: inline-block;
-    padding: 8px 20px 10px 20px;
-    margin: 0;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1;
-    margin-bottom: 5px;
-    border-radius: 50px;
+.content{
     transition: all 0.3s ease-in-out;
-    font-family: var(--heading-font);
 }
-.tabs input { display:none; }
-.tabs .labels { display:flex; }
-.tabs .labels label {
-    padding:8px 16px;
-    cursor:pointer;
+.labels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row;
+  gap: 8px;
 }
-.tabs .labels label.active {
-    color: var(--contrast-color);
-    background-color: var(--accent-color);
+
+.labels label {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--heading-font);
 }
-.tabs .content { display:none; padding:16px 0; }
-/* 탭1 */
+
+.labels label:hover {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+.labels label.active {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+.port_tabs .content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  padding: 16px 0;
+}
+
+#tab1:checked ~ #port_content1,
+#tab2:checked ~ #port_content2,
+#tab3:checked ~ #port_content3,
+#tab4:checked ~ #port_content4 {
+  opacity: 1;
+  visibility: visible;
+  position: static;
+}
+
 #tab1:checked ~ .labels label[for="tab1"],
-#tab1:checked ~ #content1 {
-    display: block;
-}
-#tab1:checked ~ .labels label[for="tab1"] {
-    color: var(--contrast-color);
-    background-color: var(--accent-color);
-}
-/* 탭2 */
 #tab2:checked ~ .labels label[for="tab2"],
-#tab2:checked ~ #content2 {
-    display: block;
-}
-#tab2:checked ~ .labels label[for="tab2"] {
-    color: var(--contrast-color);
-    background-color: var(--accent-color);
-}
-/* 탭3 */
 #tab3:checked ~ .labels label[for="tab3"],
-#tab3:checked ~ #content3 {
-display: block;
-}
-#tab3:checked ~ .labels label[for="tab3"] {
-    color: var(--contrast-color);
-    background-color: var(--accent-color);
-}
-/* 탭4 */
-#tab4:checked ~ .labels label[for="tab4"],
-#tab4:checked ~ #content4 {
-    display: block;
-}
 #tab4:checked ~ .labels label[for="tab4"] {
-    color: var(--contrast-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+#port_container_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 416px); /* 고정 너비 지정 */
+  gap: 20px;
+  justify-content: center; /* 가운데 정렬 */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.port_img1,
+.port_img2,
+.port_img3 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 416px;
+}
+
+#port_content1 img {
+  width: 416px;
+  height: auto;
+  object-fit: cover;
+  display: grid;
+}
+#floating_btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99998;
     background-color: var(--accent-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: all 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#floating_btn:hover{
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }

@@ -21,7 +21,9 @@
   gap: 30px;
   align-items: center;
 }
-
+.hero-content{
+  width: 636px;
+}
 /* 히어로 텍스트 콘텐츠 */
 .hero-content h1 {
   color: #ffffff;
@@ -94,9 +96,8 @@
 
 /* 히어로 이미지 */
 .hero-image img {
-  width: 100%;
+  width: 636px;
   height: auto;
-  max-width: 460px;
   animation: float 6s ease-in-out infinite; /* 부유 애니메이션 */
 }
 
