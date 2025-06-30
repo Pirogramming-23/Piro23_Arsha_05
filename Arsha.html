@@ -173,23 +173,26 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <ul>
                                 <li>
-                                    <i class="bi bi-check2-circle circle-bar"></i>
+                                    <div class="check-circle"></div>
                                     <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check2-circle circle-bar"></i>
+                                    <div class="check-circle"></div>
                                     <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check2-circle circle-bar"></i>
+                                    <div class="check-circle"></div>
                                     <span>Ullamco laboris nisi ut aliquip ex ea commodo</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="about-right">
                             <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteursint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <a href="#" class="read-more">
                                 <span>Read More</span>
-                                <i class="bi bi-arrow-right arrow-right"></i>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M13 5l7 7-7 7M0 12h20" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>                            
                             </a>
                         </div>
                     </div>
@@ -208,7 +211,7 @@
                             <summary>
                                 <span class="faq-number">01</span>
                                 <span class="faq-question">Non consectetur a erat nam at lectus urna duis?</span>
-                                <i class="bi faq-toggle"></i>
+                                <span class="f-faq-toggle"></span>
                             </summary>
                             <div class="faq-answer">
                                 Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.
@@ -220,7 +223,7 @@
                             <summary>
                                 <span class="faq-number">02</span>
                                 <span class="faq-question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span>
-                                <i class="bi faq-toggle toggle-bottom"></i>
+                                <span class="f-faq-toggle"></span>
                             </summary>
                             <div class="faq-answer">
                                 Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
@@ -232,7 +235,7 @@
                             <summary>
                                 <span class="faq-number">03</span>
                                 <span class="faq-question">Dolor sit amet consectetur adipiscing elit pellentesque?</span>
-                                <i class="bi faq-toggle toggle-bottom"></i>
+                                <span class="f-faq-toggle"></span>
                             </summary>
                             <div class="faq-answer">
                                 Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
@@ -429,12 +432,213 @@
         <div id="call_to_action"></div>
         <div id="portfolio"></div>
         <div id="team"></div>
-        <div id="pricing"></div>
+        <div id="pricing">
+            <div class="pricing-top">
+                <h2>PRICING</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <h3>Free Plan</h3>
+                    <h4><sup>$ </sup>
+                    0
+                    <span>/ month</span></h4>
+                    <ul>
+                        <li>Quam adipiscing vitae proin</li>
+                        <li>Volutpat blandit aliquam etiam</li>
+                        <li>Nulla at volutpat diam uteera</li>
+                        <li class="disabled">Pharetra massa massa ultricies</li>
+                        <li class="disabled">Massa ultricies mi quis hendrerit</li>
+                    </ul>
+                    <a href="#" class="pricing-btn">Buy Now</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Business Plan</h3>
+                    <h4><sup>$ </sup>
+                    29
+                    <span>/ month</span></h4>
+                    <ul>
+                        <li>Quam adipiscing vitae proin</li>
+                        <li>Nec feugiat nisl pretium</li>
+                        <li>Nulla at volutpat diam uteera</li>
+                        <li>Pharetra massa massa ultricies</li>
+                        <li>Massa ultricies mi quis hendrerit</li>
+                    </ul>
+                    <a href="#" class="pricing-btn">Buy Now</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Developer Plan</h3>
+                    <h4><sup>$ </sup>
+                    49
+                    <span>/ month</span></h4>
+                    <ul>
+                        <li>Quam adipiscing vitae proin</li>
+                        <li>Nec feugiat nisl pretium</li>
+                        <li>Nulla at volutpat diam uteera</li>
+                        <li>Pharetra massa massa ultricies</li>
+                        <li>Massa ultricies mi quis hendrerit</li>
+                    </ul>
+                    <a href="#" class="pricing-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
         <div id="testimonials"></div>
-        <div id="frequently"></div>
+        <div id="frequently">
+            <div class="frequently-container">
+            <div class="frequently-top">
+                <h2>Frequently Asked Questions</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+            <div class="faq-container">
+            <div class="f-faq-box">
+                    <details class="f-faq-item">
+                        <summary>
+                            <img src="./question-line.svg" alt="faq icon">
+                            <span class="f-faq-question">Non consectetur a erat nam at lectus urna duis?</span>
+                            <span class="f-faq-toggle"></span>
+                        </summary>
+                        <div class="f-faq-answer">
+                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Risus feugiat in ante metus dictum at tempor commodo ullamcorper.
+                        </div>
+                    </details>
+                </div>
+                <div class="f-faq-box">
+                    <details class="f-faq-item">
+                        <summary>
+                            <img src="./question-line.svg" alt="faq icon">
+                            <span class="f-faq-question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span>
+                            <span class="f-faq-toggle"></span>
+                        </summary>
+                        <div class="f-faq-answer">
+                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                        </div>
+                    </details>
+                </div>
+                <div class="f-faq-box">
+                    <details class="f-faq-item">
+                        <summary>
+                            <img src="./question-line.svg" alt="faq icon">
+                            <span class="f-faq-question">Dolor sit amet consectetur adipiscing elit pellentesque?</span>
+                            <span class="f-faq-toggle"></span>
+                        </summary>
+                        <div class="f-faq-answer">
+                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                        </div>
+                    </details>
+                </div>
+                <div class="f-faq-box">
+                    <details class="f-faq-item">
+                        <summary>
+                            <img src="./question-line.svg" alt="faq icon">
+                            <span class="f-faq-question">Dolor sit amet consectetur adipiscing elit pellentesque?</span>
+                            <span class="f-faq-toggle"></span>
+                        </summary>
+                        <div class="f-faq-answer">
+                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                        </div>
+                    </details>
+                </div>
+                <div class="f-faq-box">
+                    <details class="f-faq-item">
+                        <summary>
+                            <img src="./question-line.svg" alt="faq icon">
+                            <span class="f-faq-question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</span>
+                            <span class="f-faq-toggle"></span>
+                        </summary>
+                        <div class="f-faq-answer">
+                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                        </div>
+                    </details>
+                </div>
+                <div class="f-faq-box">
+                    <details class="f-faq-item">
+                        <summary>
+                            <img src="./question-line.svg" alt="faq icon">
+                            <span class="f-faq-question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span>
+                            <span class="f-faq-toggle"></span>
+                        </summary>
+                        <div class="f-faq-answer">
+                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                        </div>
+                    </details> 
+                </div>
+            </div>
+            </div>
+        </div>
         <div id="subscribe"></div>
         <div id="recent"></div>
-        <div id="contact"></div>
+        <div id="contact">
+            <div class="contact-container">
+                <div class="contact-title">
+                    <h2>Contact</h2>
+                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-box">
+                            <div class="contact-icon-circle">
+                                <svg class="./map-pin-line.svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                        </div>
+                        <div class="contact-box">
+                            <div class="contact-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-phone" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.61 21.5 2.5 13.39 2.5 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/>
+                            </svg>
+                            </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 5589 55488 55</p>
+                        </div>
+                        </div>
+                        <div class="contact-box">
+                            <div class="contact-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-mail" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.99l8 6 8-6V18H4Z"/>
+                            </svg>
+                            </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@example.com</p>
+                        </div>
+                        </div>
+                        <div class="map">
+                        <iframe src="https://maps.google.com/maps?q=Downtown%20Conference%20Center&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <footer id="main_footer">
         <div id="footer_join">
