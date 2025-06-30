@@ -343,13 +343,7 @@ h1, h2, h3, h4, h5, h6 {
         padding: 30px 20px 20px;
     }
 
-    .work-number {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        left: 25px;
-        top: -25px;
-    }
+    
 
     .work-content h3 {
         font-size: 20px;
@@ -365,6 +359,19 @@ h1, h2, h3, h4, h5, h6 {
     .work-process .work-content p {
         font-size: 14px;
         margin-bottom: 20px;
+    }
+}
+@media (max-width: 1014px) {
+    .work-item {
+        width: 100%; /* 한 줄에 하나 */
+    }
+
+    .work-number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        left: 12px;
+        top: 160px;
     }
 }
 
@@ -557,28 +564,35 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-#recent {
-    padding: 60px 0;
-    color : #444444;
-    background-color: #f5f6f8;
-    max-width: 1240px;
-    margin: 0 auto;
-    overflow : clip;
+@media (max-width: 968px){
+    .team-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
+
+
+.blog-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 제목 영역 */
 .blog-title {
     text-align: center;
-    padding: 0px 12px 60px;
-    position: relative;
-    margin: 0px 16px;
+    margin-bottom: 40px;
 }
 
 .blog-title h2 {
     font-size: 32px;
     font-weight: 700;
+    color: #37517e;
     margin-bottom: 20px;
     padding-bottom: 20px;
     text-transform: uppercase;
+    font-family: "Jost", sans-serif;
     position: relative;
 }
 
@@ -604,42 +618,48 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
 }
 
-.blog-title p{
-    margin-bottom: 0;
-    font-size: 15px;
+.blog-title p {
     color: #666;
-    line-height: 1.6;
-}
-
-.blog-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    padding: 20px 0;
-}
-
-.blog-item {
-    flex: 1 1 300px;
-    max-width: 420px;
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease;
     font-size: 16px;
 }
 
-.blog-item:hover {
-    transform: translateY(-10px);
+/* 블로그 카드 레이아웃 */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
 
+/* 개별 블로그 카드 */
+.blog-item {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 350px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.blog-item-4{
+    background: transparent;
+    
+    overflow: hidden;
+    max-width: 350px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+
+/* 이미지 영역 */
 .blog-img {
     position: relative;
-    width: 100%;
-    height: 240px;
+    height: 220px;
     overflow: hidden;
 }
 
@@ -647,45 +667,100 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
 }
 
+.blog-img img:hover {
+    transform: scale(1.13);
+    transition: 0.5s;
+}
+
+/* 날짜 뱃지 */
 .blog-date {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0px;
+    right: 0px;
     background: #47b2e4;
     color: #ffffff;
-    font-size: 13px;
     padding: 6px 12px;
-    font-weight : 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
+/* 본문 콘텐츠 */
 .blog-content {
-    padding: 20px;
+    padding: 30px;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
 }
 
+.blog-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #37517e;
+    line-height: 1.4;
+    
+    font-weight: 700;
+
+    
+}
+
+/* 메타 정보 (작성자 + 카테고리) */
 .blog-meta {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
     font-size: 14px;
     color: #777;
-    align-items: center;
 }
+
 .blog-meta svg {
     width: 16px;
     height: 16px;
-    fill: #888;
-    margin-right: 4px;
     vertical-align: middle;
+    color: #47b2e4;
+    margin: 1px;
+}
+.blog-meta span{
+    margin: 1px;
 }
 
+/* 구분선 */
+.blog-content hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+/* Read more 버튼 */
 .blog-read-more {
-    margin-top: auto;
-    color: #007bff;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1;
+    transition: 0.3s;
+    color: color-mix(in srgb, #444444, transparent 40%);
+    font-size: 16px;
     text-decoration: none;
-    font-weight: bold;
+    gap: 6px; /* 아이콘과 텍스트 사이 여백 */
+}
+
+.blog-read-more:hover {
+    color: color-mix(in srgb, #444444, transparent 20%);
+}
+
+.blog-read-more svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 3px;
+}
+
+.blog-item:hover h3, .blog-read-more{
+  color: #47b2e4; /* hover 시 카드 배경색 변경 */
 }
