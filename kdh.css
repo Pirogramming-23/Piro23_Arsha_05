@@ -111,18 +111,24 @@
         background-color: #00b4ff;
     }
 }
-
+/* header밝기 낮은게 좀 아쉽다 */
 #main_header {
     padding: 15px 0;
     font-family: var(--default-font);
     display: flex;
     align-items: center;
-    background-color: rgba(40, 58, 90, 0.9);
+    background-color: rgba(40, 58, 90, 0.78);
     position: fixed;
     width: 100%;
     z-index: 997;
 }
-
+#header_mask1 {
+    position: sticky;
+    height: 90px;
+    width: 100%;
+    background-color: rgb(108, 163, 254);
+    z-index: 995;
+}
 #main_header_div {
     display: flex;
     flex: 1;
@@ -474,3 +480,5 @@
 .footer_link_li:hover > a{
     color: var(--color_lightblue);
 }
+
+/*portfolio start*/
