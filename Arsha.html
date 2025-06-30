@@ -662,7 +662,28 @@
             </div>
         </div>
         <div id="frequently"></div>
-        <div id="subscribe"></div>
+        <section id="subscribe" class="subscribe-section">
+            <div class="subscribe-container">
+                <div class="subscribe-row">
+                    <div class="subscribe-content">
+                        <h2>Subscribe to our newsletter</h2>
+                        <p>Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.</p>
+                        <form action="forms/newsletter.php" method="post" class="subscribe-form">
+                            <div class="subscribe-input-group">
+                                <input type="email" placeholder="Email address..." required>
+                                <button type="submit">Subscribe</button>
+                            </div>
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                        </form>
+                    </div>
+                    <div class="subscribe-image">
+                        <img src="./sc.png" alt="Newsletter" />
+                    </div>
+                </div>
+            </div>
+        </section>
         <div id="recent" class="blog-section">
             <div class="blog-title">
                 <h2>recent blog posts</h2>
