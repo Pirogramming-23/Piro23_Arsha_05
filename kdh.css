@@ -482,3 +482,123 @@
 }
 
 /*portfolio start*/
+
+#portfolio{
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+#port_title_container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#port_title_container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #37517e;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-family: "Jost", sans-serif;
+    position: relative;
+}
+#port_title_container h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #47b2e4;
+}
+
+#port_title_container h2::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 1px;
+    background: color-mix(in srgb, #444444, transparent 60%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#port_title_container p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+#port_content_container{
+    max-width: 1320px;
+    padding: 0 12px;
+}
+
+.labels label{
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 20px 10px 20px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    font-family: var(--heading-font);
+}
+.tabs input { display:none; }
+.tabs .labels { display:flex; }
+.tabs .labels label {
+    padding:8px 16px;
+    cursor:pointer;
+}
+.tabs .labels label.active {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+}
+.tabs .content { display:none; padding:16px 0; }
+/* 탭1 */
+#tab1:checked ~ .labels label[for="tab1"],
+#tab1:checked ~ #content1 {
+    display: block;
+}
+#tab1:checked ~ .labels label[for="tab1"] {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+}
+/* 탭2 */
+#tab2:checked ~ .labels label[for="tab2"],
+#tab2:checked ~ #content2 {
+    display: block;
+}
+#tab2:checked ~ .labels label[for="tab2"] {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+}
+/* 탭3 */
+#tab3:checked ~ .labels label[for="tab3"],
+#tab3:checked ~ #content3 {
+display: block;
+}
+#tab3:checked ~ .labels label[for="tab3"] {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+}
+/* 탭4 */
+#tab4:checked ~ .labels label[for="tab4"],
+#tab4:checked ~ #content4 {
+    display: block;
+}
+#tab4:checked ~ .labels label[for="tab4"] {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+}
