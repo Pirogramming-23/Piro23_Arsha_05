@@ -1,23 +1,30 @@
+/* ============================================
+   홈 섹션 (Hero Section)
+   - 메인 페이지 상단의 히어로 영역
+   - 좌측: 텍스트 콘텐츠, 우측: 이미지
+   ============================================ */
+
 .hero-section {
   background-color: var(--color_navy);
-  min-height: 100vh;
+  min-height: 75vh; /* 화면 높이의 75% */
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding: 40px 0 40px;
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: 1140px; /* Bootstrap 컨테이너 기준 */
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 1fr; /* 1:1 비율 2열 그리드 */
+  gap: 30px;
   align-items: center;
 }
 
+/* 히어로 텍스트 콘텐츠 */
 .hero-content h1 {
-  color: var(--color_white);
+  color: #ffffff;
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -26,23 +33,25 @@
 }
 
 .hero-content h2 {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8); /* 80% 투명도 적용 */
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 30px;
 }
 
+/* 히어로 버튼 영역 */
 .hero-buttons {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* 모바일에서 줄바꿈 허용 */
 }
 
+/* Get Started 버튼 */
 .btn-get-started {
   background: var(--color_skyblue);
-  color: var(--color_white);
+  color: #ffffff;
   padding: 12px 30px;
-  border-radius: 50px;
+  border-radius: 50px; /* 완전한 둥근 모서리 */
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -50,12 +59,12 @@
 }
 
 .btn-get-started:hover {
-  background: var(--color_lightblue);
-  transform: translateY(-2px);
+  background: var(--color_lightblue); /* 호버 시 색상 변경만 */
 }
 
+/* Watch Video 버튼 */
 .btn-watch-video {
-  color: var(--color_white);
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -69,247 +78,1137 @@
 }
 
 .btn-watch-video:hover .ri-play-circle-line {
-  background: var(--color_skyblue);
-  color: var(--color_white);
-}
-/* 로고가 이상해요.. */
-.ri-play-circle-line {
-  color: var(--color_navy);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  transition: all 0.3s ease;
+  color: #7ec8f5;
 }
 
+/* 재생 버튼 아이콘 */
+.ri-play-circle-line {
+  font-size: 32px;
+  border-radius: 50%;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 2px;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+/* 히어로 이미지 */
 .hero-image img {
   width: 100%;
   height: auto;
-  animation: float 6s ease-in-out infinite;
+  max-width: 460px;
+  animation: float 6s ease-in-out infinite; /* 부유 애니메이션 */
 }
 
+/* 이미지 부유 애니메이션 */
 @keyframes float {
   0%,
   100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-20px); /* 위로 20px 이동 */
   }
 }
 
-/* Call to Action Section */
-.cta-section {
-  background: linear-gradient(
-    135deg,
-    var(--color_navy) 0%,
-    var(--color_dark_navy) 100%
-  );
-  padding: 80px 0;
-  color: var(--color_white);
+/* ============================================
+   클라이언트 로고 슬라이더 섹션
+   - 고객사 로고들이 자동으로 슬라이드
+   - 5초 정지 + 1.5초 슬라이드 패턴
+   ============================================ */
+
+.clients.section-bg {
+  background: #f3f5fa; /* 연한 회색 배경 */
+  padding: 12px 0;
+  overflow: hidden; /* 넘치는 슬라이드 숨김 */
 }
 
-.cta-container {
-  max-width: 1200px;
+.clients .container {
+  max-width: 1200px; /* 6개 로고가 정확히 보이도록 설정 */
   margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-}
-
-.cta-content h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  font-family: var(--heading-font);
-}
-
-.cta-content p {
-  font-size: 16px;
-  line-height: 1.8;
-  opacity: 0.9;
-  max-width: 600px;
-}
-
-.btn-cta {
-  background: var(--color_skyblue);
-  color: var(--color_white);
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.btn-cta:hover {
-  background: var(--color_lightblue);
-  transform: translateY(-2px);
-}
-
-/* Testimonials Section */
-.testimonials-section {
-  background: var(--color_light_gray);
-  padding: 80px 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.section-header h2 {
-  color: var(--color_navy);
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  font-family: var(--heading-font);
-}
-
-.section-header p {
-  color: var(--color_gray);
-  font-size: 16px;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-.testimonials-slider {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-}
-
-.testimonial-item {
-  background: var(--color_white);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.testimonial-item:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-content {
-  margin-bottom: 20px;
-}
-
-.testimonial-content p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--color_gray);
-  font-style: italic;
+  padding: 0 40px;
   position: relative;
 }
 
-.quote-icon {
-  color: var(--color_skyblue);
-  font-size: 24px;
-  font-style: normal;
+.clients-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* 슬라이더 중앙 정렬 */
 }
 
-.testimonial-info {
+.clients-slider {
   display: flex;
   align-items: center;
-  gap: 15px;
+  width: calc(200% + 160px); /* 무한 루프를 위한 너비 설정 */
+  animation: clients-step-slide 52s infinite; /* 52초 주기 반복 */
 }
 
-.testimonial-info img {
-  width: 60px;
+/* 개별 로고 슬라이드 */
+.clients-slide {
+  flex: 0 0 auto; /* 크기 고정 */
+  margin: 0 40px; /* 로고 간격 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+  min-width: 120px;
 }
 
-.testimonial-details h3 {
-  color: var(--color_navy);
-  font-size: 18px;
+.clients-slide img {
+  max-height: 35px;
+  width: 120px; /* 고정 너비로 일관성 유지 */
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: contain; /* 비율 유지하며 맞춤 */
+}
+
+.clients-slide:hover img {
+  transform: scale(1.1); /* 호버 시 확대 */
+}
+
+/* 슬라이더 애니메이션 (8개 로고, 5초 정지 + 1.5초 슬라이드) */
+@keyframes clients-step-slide {
+  0%,
+  9.6% {
+    transform: translateX(0);
+  }
+  12.5%,
+  22.1% {
+    transform: translateX(calc(-1 * (120px + 80px)));
+  }
+  25%,
+  34.6% {
+    transform: translateX(calc(-2 * (120px + 80px)));
+  }
+  37.5%,
+  47.1% {
+    transform: translateX(calc(-3 * (120px + 80px)));
+  }
+  50%,
+  59.6% {
+    transform: translateX(calc(-4 * (120px + 80px)));
+  }
+  62.5%,
+  72.1% {
+    transform: translateX(calc(-5 * (120px + 80px)));
+  }
+  75%,
+  84.6% {
+    transform: translateX(calc(-6 * (120px + 80px)));
+  }
+  87.5%,
+  97.1% {
+    transform: translateX(calc(-7 * (120px + 80px)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 호버 시 애니메이션 일시정지 */
+.clients-slider:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   Call to Action 섹션
+   - 배경 이미지와 오버레이가 있는 액션 유도 영역
+   - 좌측: 텍스트, 우측: 버튼
+   ============================================ */
+
+.call-to-action {
+  background: linear-gradient(rgba(55, 81, 126, 0.7), rgba(55, 81, 126, 0.7)),
+    url("https://bootstrapmade.com/content/demo/Arsha/assets/img/bg/bg-8.webp")
+      center center;
+  background-attachment: fixed; /* 패럴랙스 효과 */
+  background-size: cover;
+  padding: 120px 0;
+  position: relative;
+}
+
+.call-to-action .container {
+  position: relative;
+  z-index: 2; /* 배경 위에 표시 */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.call-to-action .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* 텍스트 영역 (75% 너비) */
+.call-to-action .col-lg-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+/* 버튼 영역 (25% 너비) */
+.call-to-action .col-lg-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.call-to-action h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.call-to-action p {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 텍스트 정렬 클래스 */
+.call-to-action .text-center {
+  text-align: center;
+}
+
+.call-to-action .text-lg-start {
+  text-align: left;
+}
+
+.call-to-action .cta-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* CTA 버튼 스타일 */
+.call-to-action .cta-btn {
+  color: #fff;
+  border: 2px solid #ffffff;
+  background: transparent;
+  border-radius: 50px;
+  padding: 10px 40px 12px 40px;
+  text-decoration: none;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 5px;
-  font-family: var(--heading-font);
+  display: inline-block;
+  transition: 0.5s;
 }
 
-.testimonial-details h4 {
-  color: var(--color_gray);
+.call-to-action .cta-btn:hover {
+  background: #47b2e4;
+  color: #fff;
+  border-color: #47b2e4;
+}
+
+/* ============================================
+   고객 후기 섹션 (Testimonials)
+   - 고객 리뷰가 자동으로 슬라이드
+   - 8개 후기, 4초마다 전환
+   ============================================ */
+
+.testimonials.section-bg {
+  background: #f3f5fa;
+  padding: 80px 0;
+}
+
+/* 섹션 제목 */
+.testimonials .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonials .section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #37517e;
+  font-family: "Jost", sans-serif;
+}
+
+/* 제목 하단 밑줄 효과 */
+.testimonials .section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.testimonials .section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #47b2e4; /* 강조 밑줄 */
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.testimonials .section-title p {
+  margin-bottom: 0;
+  color: #919191;
+  font-size: 15px;
+}
+
+/* 후기 슬라이더 컨테이너 */
+.testimonials-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  animation: testimonial-slide 32s infinite; /* 32초 주기 (8개 x 4초) */
+}
+
+/* 개별 후기 아이템 */
+.testimonial-item {
+  min-width: 100%; /* 전체 너비 차지 */
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+  color: #7a7a7a;
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 700px;
+}
+
+/* 인용 부호 아이콘 */
+.testimonial-item .quote-icon-left,
+.testimonial-item .quote-icon-right {
+  color: #47b2e4;
+  font-size: 26px;
+}
+
+.testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+/* 고객 프로필 이미지 */
+.testimonial-item img {
+  width: 90px;
+  border-radius: 50%; /* 원형 이미지 */
+  margin: 0 auto 15px auto;
+  display: block;
+}
+
+/* 고객 이름 */
+.testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #37517e;
+}
+
+/* 고객 직책 */
+.testimonial-item h4 {
   font-size: 14px;
-  font-weight: 400;
+  color: #999;
+  margin: 0 0 15px 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  #main_header {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 5%;
-  }
+/* 별점 영역 */
+.testimonial-item .stars {
+  margin: 15px 0;
+}
 
-  #main_header nav {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.testimonial-item .stars i {
+  font-size: 16px;
+  color: #ffd700; /* 금색 별 */
+  margin: 0 2px;
+}
 
+/* 슬라이더 인디케이터 (점 표시) */
+.testimonial-indicators {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.testimonial-indicators .indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* 각 인디케이터별 활성화 애니메이션 (8개 슬라이드에 맞춰 설정) */
+.testimonial-indicators .indicator:nth-child(1) {
+  animation: indicator-1 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(2) {
+  animation: indicator-2 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(3) {
+  animation: indicator-3 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(4) {
+  animation: indicator-4 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(5) {
+  animation: indicator-5 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(6) {
+  animation: indicator-6 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(7) {
+  animation: indicator-7 32s infinite;
+}
+
+.testimonial-indicators .indicator:nth-child(8) {
+  animation: indicator-8 32s infinite;
+}
+
+/* 인디케이터 애니메이션 정의 (각 슬라이드별로 활성화 시점 다름) */
+@keyframes indicator-1 {
+  0%,
+  11.5% {
+    background: #47b2e4;
+  }
+  12.5%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-2 {
+  0%,
+  11.5% {
+    background: #ddd;
+  }
+  12.5%,
+  23.5% {
+    background: #47b2e4;
+  }
+  25%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-3 {
+  0%,
+  23.5% {
+    background: #ddd;
+  }
+  25%,
+  36% {
+    background: #47b2e4;
+  }
+  37.5%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-4 {
+  0%,
+  36% {
+    background: #ddd;
+  }
+  37.5%,
+  48.5% {
+    background: #47b2e4;
+  }
+  50%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-5 {
+  0%,
+  48.5% {
+    background: #ddd;
+  }
+  50%,
+  61% {
+    background: #47b2e4;
+  }
+  62.5%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-6 {
+  0%,
+  61% {
+    background: #ddd;
+  }
+  62.5%,
+  73.5% {
+    background: #47b2e4;
+  }
+  75%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-7 {
+  0%,
+  73.5% {
+    background: #ddd;
+  }
+  75%,
+  86% {
+    background: #47b2e4;
+  }
+  87.5%,
+  100% {
+    background: #ddd;
+  }
+}
+
+@keyframes indicator-8 {
+  0%,
+  86% {
+    background: #ddd;
+  }
+  87.5%,
+  98.5% {
+    background: #47b2e4;
+  }
+  100% {
+    background: #ddd;
+  }
+}
+
+/* 기본 active 클래스는 CSS 애니메이션으로 덮어씀 */
+.testimonial-indicators .indicator.active {
+  background: #47b2e4; /* 활성 인디케이터 색상 (애니메이션에서 제어됨) */
+}
+
+/* 후기 자동 슬라이드 애니메이션 (8개 슬라이드, 각 4초씩) */
+@keyframes testimonial-slide {
+  0%,
+  11.5% {
+    transform: translateX(0);
+  }
+  12.5%,
+  23.5% {
+    transform: translateX(-100%);
+  }
+  25%,
+  36% {
+    transform: translateX(-200%);
+  }
+  37.5%,
+  48.5% {
+    transform: translateX(-300%);
+  }
+  50%,
+  61% {
+    transform: translateX(-400%);
+  }
+  62.5%,
+  73.5% {
+    transform: translateX(-500%);
+  }
+  75%,
+  86% {
+    transform: translateX(-600%);
+  }
+  87.5%,
+  98.5% {
+    transform: translateX(-700%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   반응형 디자인 - Arsha 공식 웹사이트와 동일한 방식
+   브레이크포인트: 1200px, 992px, 768px, 576px, 480px
+   ============================================ */
+
+/* 큰 데스크톱 (1200px 이상) - 기본 스타일 유지 */
+
+/* 중간 데스크톱 (1200px 이하) */
+@media (max-width: 1199.98px) {
   .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
+    max-width: 960px;
+    padding: 0 15px;
   }
 
   .hero-content h1 {
-    font-size: 36px;
+    font-size: 44px;
+  }
+
+  .hero-content h2 {
+    font-size: 22px;
+  }
+
+  .hero-image img {
+    max-width: 420px;
+  }
+
+  .clients .container {
+    max-width: 1140px;
+    padding: 0 30px;
+  }
+
+  .call-to-action .container {
+    max-width: 1140px;
+  }
+
+  .testimonials-carousel {
+    max-width: 750px;
+  }
+}
+
+/* 태블릿 (992px 이하) */
+@media (max-width: 991.98px) {
+  .hero-container {
+    max-width: 720px;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
   }
 
   .hero-content h2 {
     font-size: 20px;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .hero-image img {
+    max-width: 380px;
   }
 
-  .cta-container {
-    flex-direction: column;
+  /* CTA 섹션 - 세로 레이아웃으로 변경 */
+  .call-to-action .col-lg-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .call-to-action .col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .call-to-action .text-lg-start {
     text-align: center;
   }
 
-  .testimonials-slider {
-    grid-template-columns: 1fr;
+  .call-to-action .cta-btn-container {
+    justify-content: center;
+  }
+
+  .clients .container {
+    padding: 0 20px;
+  }
+
+  .testimonials .section-title h2 {
+    font-size: 30px;
   }
 }
 
-@media (max-width: 480px) {
+/* 태블릿 세로/모바일 가로 (768px 이하) */
+@media (max-width: 767.98px) {
+  /* 홈 섹션 - 완전한 세로 레이아웃 */
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 50px;
+    max-width: 540px;
+    padding: 0 15px;
+  }
+
   .hero-content h1 {
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 15px;
   }
 
   .hero-content h2 {
     font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .btn-get-started {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  .btn-watch-video {
+    font-size: 14px;
+  }
+
+  .ri-play-circle-line {
+    font-size: 28px;
+  }
+
+  .hero-image {
+    order: -1; /* 이미지를 텍스트 위로 이동 */
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+
+  /* 클라이언트 섹션 - 모바일 최적화 */
+  .clients.section-bg {
+    padding: 30px 0;
+  }
+
+  .clients .container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  .clients-slide {
+    margin: 0 20px;
+    height: 45px;
+    min-width: 90px;
+  }
+
+  .clients-slide img {
+    max-height: 32px;
+    width: 90px;
+  }
+
+  .clients-slider {
+    animation: clients-step-slide-tablet 52s infinite;
+  }
+
+  /* 태블릿용 클라이언트 슬라이더 애니메이션 */
+  @keyframes clients-step-slide-tablet {
+    0%,
+    9.6% {
+      transform: translateX(0);
+    }
+    12.5%,
+    22.1% {
+      transform: translateX(calc(-1 * (90px + 40px)));
+    }
+    25%,
+    34.6% {
+      transform: translateX(calc(-2 * (90px + 40px)));
+    }
+    37.5%,
+    47.1% {
+      transform: translateX(calc(-3 * (90px + 40px)));
+    }
+    50%,
+    59.6% {
+      transform: translateX(calc(-4 * (90px + 40px)));
+    }
+    62.5%,
+    72.1% {
+      transform: translateX(calc(-5 * (90px + 40px)));
+    }
+    75%,
+    84.6% {
+      transform: translateX(calc(-6 * (90px + 40px)));
+    }
+    87.5%,
+    97.1% {
+      transform: translateX(calc(-7 * (90px + 40px)));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Call to Action - 패럴랙스 제거 */
+  .call-to-action {
+    background-attachment: scroll;
+    padding: 60px 0;
+  }
+
+  .call-to-action h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .call-to-action p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .call-to-action .cta-btn {
+    padding: 8px 30px 10px 30px;
+    font-size: 14px;
+  }
+
+  /* 후기 섹션 - 텍스트 크기 조정 */
+  .testimonials.section-bg {
+    padding: 60px 0;
+  }
+
+  .testimonials .section-title {
+    margin-bottom: 40px;
+  }
+
+  .testimonials .section-title h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  .testimonials .section-title p {
+    font-size: 14px;
+  }
+
+  .testimonials-carousel {
+    max-width: 100%;
+  }
+
+  .testimonial-item {
+    padding: 25px 15px;
+  }
+
+  .testimonial-item p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .testimonial-item img {
+    width: 80px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-item h3 {
+    font-size: 16px;
+    margin: 8px 0 3px 0;
+  }
+
+  .testimonial-item h4 {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-item .stars {
+    margin: 12px 0;
+  }
+
+  .testimonial-item .stars i {
+    font-size: 14px;
+  }
+
+  .testimonial-indicators {
+    margin-top: 25px;
+  }
+
+  .testimonial-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+  }
+
+  /* 헤더 & 네비게이션 - 세로 레이아웃 */
+  #main_header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  #main_header nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* 모바일 가로 (576px 이하) */
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .hero-container {
+    max-width: 100%;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .hero-content h2 {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .hero-image img {
+    max-width: 280px;
+  }
+
+  .clients.section-bg {
+    padding: 25px 0;
+  }
+
+  .call-to-action {
+    padding: 50px 0;
+  }
+
+  .call-to-action h3 {
+    font-size: 22px;
+  }
+
+  .testimonials.section-bg {
+    padding: 50px 0;
+  }
+
+  .testimonials .section-title h2 {
+    font-size: 24px;
+  }
+
+  .testimonial-item {
+    padding: 20px 10px;
+  }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 479.98px) {
+  .hero-section {
+    padding: 50px 0;
+  }
+
+  .hero-container {
+    padding: 0 10px;
+    gap: 35px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content h2 {
+    font-size: 15px;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
-  .cta-content h3 {
+  .btn-get-started {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .btn-watch-video {
+    font-size: 13px;
+  }
+
+  .ri-play-circle-line {
     font-size: 24px;
   }
 
-  .section-header h2 {
-    font-size: 28px;
+  .hero-image img {
+    max-width: 250px;
+  }
+
+  /* 클라이언트 섹션 - 더 작은 로고 */
+  .clients.section-bg {
+    padding: 20px 0;
+  }
+
+  .clients-slide {
+    margin: 0 15px;
+    height: 35px;
+    min-width: 70px;
+  }
+
+  .clients-slide img {
+    max-height: 25px;
+    width: 70px;
+  }
+
+  .clients-slider {
+    animation: clients-step-slide-mobile 52s infinite;
+  }
+
+  /* 모바일용 클라이언트 슬라이더 애니메이션 */
+  @keyframes clients-step-slide-mobile {
+    0%,
+    9.6% {
+      transform: translateX(0);
+    }
+    12.5%,
+    22.1% {
+      transform: translateX(calc(-1 * (70px + 30px)));
+    }
+    25%,
+    34.6% {
+      transform: translateX(calc(-2 * (70px + 30px)));
+    }
+    37.5%,
+    47.1% {
+      transform: translateX(calc(-3 * (70px + 30px)));
+    }
+    50%,
+    59.6% {
+      transform: translateX(calc(-4 * (70px + 30px)));
+    }
+    62.5%,
+    72.1% {
+      transform: translateX(calc(-5 * (70px + 30px)));
+    }
+    75%,
+    84.6% {
+      transform: translateX(calc(-6 * (70px + 30px)));
+    }
+    87.5%,
+    97.1% {
+      transform: translateX(calc(-7 * (70px + 30px)));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .call-to-action {
+    padding: 40px 0;
+  }
+
+  .call-to-action .container {
+    padding: 0 10px;
+  }
+
+  .call-to-action h3 {
+    font-size: 20px;
+  }
+
+  .call-to-action p {
+    font-size: 13px;
+  }
+
+  .call-to-action .cta-btn {
+    padding: 7px 25px 9px 25px;
+    font-size: 13px;
+  }
+
+  .testimonials.section-bg {
+    padding: 40px 0;
+  }
+
+  .testimonials .section-title h2 {
+    font-size: 22px;
+  }
+
+  .testimonials .section-title p {
+    font-size: 13px;
+  }
+
+  .testimonial-item {
+    padding: 15px 8px;
+  }
+
+  .testimonial-item p {
+    font-size: 13px;
+  }
+
+  .testimonial-item img {
+    width: 70px;
+  }
+
+  .testimonial-item h3 {
+    font-size: 15px;
+  }
+
+  .testimonial-item h4 {
+    font-size: 12px;
+  }
+
+  .testimonial-item .stars i {
+    font-size: 13px;
+  }
+
+  .testimonial-indicators .indicator {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+
+  #main_header {
+    padding: 10px 15px;
+  }
+}
+
+/* 아주 작은 모바일 (360px 이하) */
+@media (max-width: 359.98px) {
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content h2 {
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    max-width: 220px;
+  }
+
+  .clients-slide img {
+    max-height: 22px;
+    width: 60px;
+  }
+
+  .call-to-action h3 {
+    font-size: 18px;
+  }
+
+  .testimonials .section-title h2 {
+    font-size: 20px;
+  }
+
+  .testimonial-item img {
+    width: 60px;
   }
 }
