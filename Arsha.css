@@ -20,7 +20,6 @@
     margin: 0;
     box-sizing: border-box;
     font-style: normal;
-    color: var(--default-color);
 }
 ul{
     list-style: none;
